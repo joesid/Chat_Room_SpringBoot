@@ -1,41 +1,41 @@
 package com.example.chat_room_springboot;
 
-
 public class Message {
     private String username;
-    private String msg;
-    private MessageType type;
-
-    public enum MessageType {
-        SPEAK
-    }
+    private String content;
 
     public Message() {
-
+        // Default constructor
     }
 
-    public Message(String username, String msg, MessageType type) {
+    public Message(String username, String content) {
         this.username = username;
-        this.msg = msg;
-        this.type = type;
+        this.content = content;
     }
+
+    // Getters and setters for username and content
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username){
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public void getMsg(String msg){
-        this.msg = msg;
-    }
-    public MessageType getType() {
-        return type;
+    public String getContent() {
+        return content;
     }
 
-    public void setType(MessageType type){
-        this.type = type;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "\"username\":\"" + username + "\"," +
+                "\"content\":\"" + content + "\"" +
+                "}";
     }
 }
